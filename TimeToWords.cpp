@@ -10,8 +10,11 @@ void timetowords(int hour,int min){
         printf("%s o' clock\n",nums[hour]);
     }
 
-    else if (min==10){
-        printf("ten minutes past %s\n",nums[hour]);
+    else if (min==1){
+        printf("one minutes past %s\n",nums[hour]);
+    }
+    else if (min==59){
+        printf("one minutes past %s\n",nums[(hour%12)+1]);
     }
 
     else if (min==15){
