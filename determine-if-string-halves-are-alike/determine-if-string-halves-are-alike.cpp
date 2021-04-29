@@ -12,13 +12,9 @@ public:
         return count;
     }
     bool halvesAreAlike(string s) {
-        int start=0,mid,end=s.length()-1;
-        mid = (start + (end - start)/2);
-        int first_count = countVowels(s,start,mid);
-        cout<<endl;
-        
-        int second_count = countVowels(s,mid+1,end);
-        if (first_count == second_count)return true;
+        // int start=0,mid,end=s.length()-1;
+       int mid = (0 + (s.length()-1)/2);
+        if (countVowels(s,0,mid)== countVowels(s,mid+ 1, s.length()-1))return true;
         return false;
     }
 };
