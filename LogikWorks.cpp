@@ -7,6 +7,7 @@
 //         }
 //     }
 //   }
+#include<string.h>
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -51,9 +52,62 @@ int *fn(){
     return ptr;
 }
 
-int main(){
-    int *res =  fn();;
-    cout<<*res;
+// int main(){
+//     int *res =  fn();;
+//     cout<<*res;
 
-    return 0;
+//     return 0;
+// }
+
+
+// int main(){
+//     int a[]={12,45,67,21};
+//     for (int i=0;i<4;i++)
+//     printf("%d %d %d %d\n",a[i],*(a+i),*(i+a),i[a]);
+
+//     return 0;
+// }
+
+// int main(){
+//     char *str;
+//     printf("Enter the string");
+//     scanf("%s",&str);
+//     char *temp=str;
+//     if (!strcmp(strrev(str),temp))
+//     printf("The strings are equal");
+// }
+
+// int checkstr(char *str,char *temp){
+//     int j=0;
+//     for (int i=strlen(str);i>=0;i--){
+//         if (str[i]!=temp[j++]){
+//         return 0;
+//         break;
+            
+//         }
+//     }
+//     return 1;
+// }
+// int main(){
+//     char *str;
+//     printf("Enter the string");
+//     scanf("%s",&str);
+//     char *temp=str;
+
+//     printf("%d",checkstr(str,temp));
+//     if (checkstr)
+//     return 0;
+// }
+
+
+#include<ctype.h>
+int main(){
+    char *str;
+    gets(str);
+    char ch;
+    int dcount=0, ucount=0, lcount=0, acount=0, scount=0, special_count=0;
+    for (int i=0;i<strlen(str);i++){
+        ch = str[i];
+        
+    }
 }
