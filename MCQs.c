@@ -86,3 +86,25 @@
 //        printf("something else");
 //         return 0;
 // }
+
+
+// int main(){
+//     extern int i;
+//     i=20;
+//     printf("%d",i);
+//     return 0;
+// }
+// The error is undefined refernce to i. Since i is an extern variable linker tries to find the 
+// declaration of i, but it cannot find it.
+
+// void display(char *string){
+//     printf("%s printed",string);
+// }
+// int main(){
+//     char string[] = "Hello world";
+//     char *string1 = "Hello world";
+//     // char *string1 = {'h','e','l','l','o','\0'};
+//     string1[0]='i';//sigsev fault trying to access mem that is not available
+//     display(&string1[2]);
+//     return 0;
+// }
