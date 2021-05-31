@@ -108,3 +108,112 @@
 //     display(&string1[2]);
 //     return 0;
 // }
+
+
+// #include<stdio.h>
+// int main(){
+//     int i=2;
+//     i=i++ + i;
+//     printf("%d",i);
+// }
+
+// #include<stdio.h>
+// int f1(){printf("Geeks"); return 1;}
+// int f2(){printf("ForGeeks"); return 1;}
+// int main(){
+//     int p=f1()+ f2();
+//     return 0;
+// }
+
+//****https://www.geeksforgeeks.org/sequence-points-in-c-set-1/ img
+// #include <stdio.h>
+// int x = 20;
+// int f1() { x = x+10; return x;}
+// int f2() { x = x-5;  return x;}
+// int main()
+// {
+//   int p = f1() + f2();
+//   printf ("p = %d", p);
+//   return 0;
+// }
+
+
+
+  // always initialize static elements by a constant only
+  // compile time error
+  // #include<stdio.h>
+  // int main(){
+  //   int x=10;
+  //   static int y=x;
+  //   if(x ==y){
+  //     printf("e");
+  //   }
+  //   else if (x>y)
+  //   printf("greater");
+  //   else
+  //   printf("less");
+  //   return 0;
+  // }
+
+// #include<stdio.h>
+// int main(){
+//   int x =5;
+//   int *const ptr = &x;
+//   ++(*ptr);
+//   int y=4;
+//   printf("%d",*ptr);
+//   return 0;
+// }
+
+//here the values are not swapped, but we may think values are swapped they are just changed in the fn but actual values are not affected.
+// #include<stdio.h>
+// void mystery(int *ptra,int *ptrb){
+//   int *temp;
+//   temp = ptra;
+//   ptra=ptrb;
+//   ptrb = temp;
+// }
+// int main(){
+//   int a=2016,b=0,c=4,d=42;
+//   mystery(&a,&b);
+//   if (a<c)
+//   mystery(&c,&a);
+//   mystery(&a,&d);
+//   printf("%d\n",a);
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int var;
+//   void *ptr = &var;
+//   *ptr = 5;//here error occurs void *ptr;
+//   printf("var = %d and Ptr =%d",var,*ptr);
+//   return 0;
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int a= 300;
+//   char *b = (char *)&a;
+//   *++b=2;
+//   printf("%d",a);
+//   return 0;
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int a[10][20][30]={0};
+//   a[5][2][1]=2;
+//   printf("%d",*(*(*(a+5)+2)+1));
+//   return 0;
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int a[][3]={1,2,3,4,5,6};
+//   int (*ptr)[3] =a;
+//   printf("%d %d ",(*ptr)[1],(*ptr)[2]);
+//   ++ptr;
+//   printf("%d %d ",(*ptr)[1],(*ptr)[2]);
+//   return 0;
+// }
