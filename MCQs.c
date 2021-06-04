@@ -217,3 +217,127 @@
 //   printf("%d %d ",(*ptr)[1],(*ptr)[2]);
 //   return 0;
 // }
+
+// Always result of logical operator is 0 or 1
+// if first has non zero value then second is not evaluated
+// #include<stdio.h>
+// int main(){
+//   printf("%d",(11111111||00000010));
+//   printf("%d\n",(10000000||00000000));
+//   printf("%x",-1<<4);
+// }
+// The operands of logical-AND and logical-OR expressions are evaluated from left to right. If the value of the first operand is sufficient to determine the result of the operation, the second operand is not evaluated. This is called "short-circuit evaluation." There is a sequence point after the first operand. See Sequence Points for more information
+
+// #include<stdio.h>
+// int main(){
+//   char string[]="Hello world";
+//   display(string);
+// }
+// void display(char * string){
+//   printf("%s",string);
+// }
+// compiler assumes implicit type as int but when it finds string it throws an error
+
+// #include<stdio.h>
+// int main(){
+//   int c =--2;
+//   printf("%d",c);//here many will think the output as 1 but its wrong as -- cannot be applied on constant only var allowed.
+//   // So its evaluated as -*- = plus 
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int a[2][2][2] = {{10,2,3,4},{5,6,7,8}};//declared a 3d array but its typecasted to 2d based on no of values.
+//   int *p,*q;
+//   p=&a[2][2][2];
+//   *q= ***a;
+//   printf("%d-- %d" ,*p,*q);
+//   return 0;
+// }
+
+// #include<stdio.h>
+// int main(){
+//   struct xx{
+//     int x=3;
+//     char name[]="hello";
+//   };
+//   struct xx *s;
+//   printf("%d",s->x);
+//   printf("%d",s->name);
+// }
+// You cannot initialize a structure variables
+
+// #include<stdio.h>
+// int main(){
+//   printf("\nhello");
+//   printf("\bllohgr");
+//   printf("\rro"); //output as rollllohgr
+// }
+
+// #include<stdio.h>
+// #define i 340
+// int main(){
+//   // int i=5;
+//   #define i 343
+//   printf("%d %d %d %d %d ",i++,i--,++i,--i,i);//error as it is just replaced by value 343 so the incre and decre cannot be applied to constants
+// }
+
+// #include<stdio.h>
+// #define clrscr() 100
+// int main(){
+//   clrscr();//it is treated as 100 it is excecutable but no result to be printed
+//   printf("%d",clrscr());
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int a;
+//   printf("%p",main);
+//   printf("%p",scanf("%d",&a));
+// }
+
+// #include<stdio.h>
+// int main(){
+//   clrscr();
+// }
+// clrscr();
+
+// #include<stdio.h>
+// int main(){
+//   char far *farther,*farthest;
+//   printf("%d %d",sizeof(farther),sizeof(farthest));
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int i=400,j=300;
+//   printf("%d %d");
+//   //works in DOS only
+// printf takes the values of the first two assignments of the program. Any number of
+// printf's may be given. All of them take only the first two values. If more number of
+// assignments given in the program,then printf will take garbage values.
+// }
+
+// #include<stdio.h>
+// int main(){
+//   char *p;
+//   p="hello";
+//   printf("%c\n",*&*p);
+// }
+
+// #include<stdio.h>
+// int main(){
+//   int i =1;
+//   while(i<=5){
+//     printf("%d",i);
+//     if (i>2)
+//       goto here;
+//     i++;
+    
+//   }
+// }
+// void fun(){
+//   here:
+//   printf("pp");
+// }
+
