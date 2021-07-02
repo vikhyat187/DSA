@@ -340,4 +340,107 @@
 //   here:
 //   printf("pp");
 // }
+// #include<stdio.h>
+// int f(int x){
+//   int i =0;
+//   while(x){
+//     x=(x&(x-1));
+//     i+=1;
+//   }
+//   return i;
+// }
+// int main(){
+//   printf("%d\n",f(5));
+//   // printf("%d",5&4);
+//   return 0;
+// }
+// #include<stdio.h>
+// void fun(){
+//   here:
+//   printf("hello guys");
+// }
+// int main(){
+//   int i =1;
+//   while(i<=5){
+//     printf("%d",i);
+//     if (i>2){
+//       goto here;
+//     }
+//       i++;
+//   }
+// }
+// Labels have functions scope,
+#include<stdio.h>
+// int main(){
+//   static char names[5][20] = {
+//     "pascal",
+//     "ada",
+//     "cobol",
+//     "fortan",
+//     "perl"
+//   };
+//   int i;
+//   char *t;
+//   t= names[3];
+//   names[3] = names[4];
+//   names[4] = t;
+//   for (i=0; i<=4;i++){
+//     printf("%s",names[i]);
+//   }
+// }
 
+
+// int main(){
+//   int i=5;
+//   printf("%d",i+++++i);//here the compiler cannot identify the Lvalue it will take it as i+ (++) +i so compiler error or if its given as i++ + ++i the output would be 6
+// }
+
+// int main(){
+
+//   static int a[5]={2,3,4,5,3};
+//   int *p;
+//   p=a;
+//   a=p;//here it is invalid as a is a const pointer and cannot change its value..
+//   a[0]=a[2];
+//   for (int i=0; i<=4;i++){
+//     printf("%d",a[i]);
+//   }
+// }
+
+// #define f(g,g2) g##g2     
+// int main(){
+//   int var12 = 100;
+//   printf("%d",f(var,12));//here the token pasting operator returns the val12 and this is the var name so 100 is printed.
+// }
+
+// int main(){
+// struct xx{
+//   int x;
+//   struct yy{
+//     char s;
+//     struct xx*p;
+//   };
+//   struct yy *q;
+// };
+// //error as we have to declare an object for the structure.
+// }
+
+// int main(){
+//   extern int i;
+//   i=20;
+//   printf("%d",sizeof(i));//linker cannot find the value of i as it has to be declared in external file to access as an extern var
+// }
+
+// int main(){
+//   extern int out;
+//   printf("%d",out);
+// }
+// int out = 200;
+
+// int main(){
+//   show();
+// }
+// void show(){
+//   printf("Hello");
+// }
+// here in the implicit defination its assumed that return type is int but its actual void
