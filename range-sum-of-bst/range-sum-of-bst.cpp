@@ -11,34 +11,13 @@
  */
 class Solution {
 public:
-    
-    void inorder(TreeNode *root,vector<int>&res){
-        if(root==NULL)return;
-        inorder(root->left,res);
-        res.push_back(root->val);
-        inorder(root->right,res);
-    }
-    
-    
     int rangeSumBST(TreeNode* root, int low, int high) {
-        vector<int>res;
-       
-        inorder(root,res);
-        int index=0,size=res.size();
+        if(root==NULL)return 0;
         
-      
-        while(index < size and res[index] < low)index++;
+        if(root->val < low )return rangeSumBST(root->right,low,high);
         
+        else if(root->val > high)return rangeSumBST(root->left,low,high);
         
-        int sum=0;
-        while(index < size and res[index] <= high){
-            sum+=res[index];
-            index++;
-            cout<<sum<<" ";
-        }
-            
-       
-        return sum;
-        
+        return root->val + rangeSumBST(root->left,low,high) + rangeSumBST(root->right,low,high);
     }
 };
