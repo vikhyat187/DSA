@@ -8,7 +8,7 @@ public:
         Trie *node = this;
         for (char c:word){
             c-='a';
-            if(node->next[c]==nullptr){
+            if(!node->next.count(c)){
                 node->next[c] = new Trie();
             }
             node = node->next[c];
@@ -21,7 +21,7 @@ public:
         Trie *node = this;
         for (char c:word){
             c-='a';
-            if(node->next[c] == nullptr)return false;
+            if(!node->next.count(c))return false;
             node = node->next[c];
         }
         return node->isword;
@@ -31,14 +31,14 @@ public:
         Trie * node = this;
         for (char c:prefix){
             c-='a';
-            if(node->next[c] == nullptr)return false;
+            if(!node->next.count(c))return false;
             node = node->next[c];
         }
         return true;
     }
     
     private:
-    Trie* next[26]={};
+    map<char,Trie*>next={};
     bool isword=false;
 };
 
