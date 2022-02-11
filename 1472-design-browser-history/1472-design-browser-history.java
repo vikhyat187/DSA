@@ -1,34 +1,43 @@
 class BrowserHistory {
-    Stack<String> Forward = new Stack<String>();
-    Stack<String> Backward = new Stack<String>();
-    
-    
+    Node head;
     public BrowserHistory(String homepage) {
-        Backward.push(homepage);
-        Forward = new Stack<String>();
+        head = new Node(homepage);
+        head.prev = null;
     }
     
     public void visit(String url) {
-        Backward.push(url);
-        Forward =new Stack<String>();
+        Node temp = new Node(url);
+        head.next = temp;
+        temp.prev = head;
+        head = head.next;
     }
     
     public String back(int steps) {
-        while(steps > 0 && Backward.size() > 1){
-            Forward.push(Backward.peek());
-            Backward.pop();
+        while(head.prev != null && steps != 0){
+            head= head.prev;
             steps--;
         }
-        return Backward.peek();
+        return head.url;
     }
     
     public String forward(int steps) {
-        while(steps > 0 && Forward.size() > 0){
-            Backward.push(Forward.peek());
-            Forward.pop();
+        while(head.next != null && steps != 0){
+            head= head.next;
             steps--;
         }
-        return Backward.peek();
+        return head.url;
+    }
+    
+    class Node{
+        String url;
+        Node prev;
+        Node next;
+        
+        Node(String url){
+            this.url = url;
+            this.prev= null;
+            this.next = null;
+        }
     }
 }
 
