@@ -1,18 +1,15 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int N= prices.length - 1;
-        int profit=0;
-        int i = 0,buy = 0,sell = 0;
-        
-        while(i < N){ 
-            while(i < N && prices[i + 1] <= prices[i])i++;
-            buy = prices[i];
-            
-            while(i < N && prices[i + 1] > prices[i])i++;
-            sell = prices[i];
-            
-            profit += sell - buy;
+        if(prices.length <= 1){
+            return 0;
         }
-        return profit;
+        
+        int total_profit =0;
+        
+        for (int i=1 ; i < prices.length; i++ ){
+            if(prices[i] > prices[i - 1])
+                total_profit += prices[i] - prices[i - 1];
+        }
+        return total_profit;
     }
 }
