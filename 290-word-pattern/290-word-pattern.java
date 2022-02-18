@@ -6,18 +6,18 @@ class Solution {
         
         
         Map<Character,String> map1= new HashMap<>();
-        Map<String, Boolean> map2= new HashMap<>();
+        Set<String> set = new HashSet<>();
         
         for (int i =0;i < pattern.length() ; i++){
             Character ch = pattern.charAt(i);
             
             if(map1.containsKey(ch) == false){
-                if(map2.containsKey(words[i]) == true){
+                if(set.contains(words[i]) == true){
                     return false;
                 }
                 else{
                     map1.put(ch,words[i]);
-                    map2.put(words[i],true);
+                    set.add(words[i]);
                 }
                 
             }
